@@ -1,0 +1,44 @@
+#business-count{
+    margin-top:23px;
+    text-align:center;
+    font-family:Arial, Helvetica, sans-serif;
+    color: #5d5d5d;
+}
+#dark{
+    color:black;
+}
+
+#all-card{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-gap:40px;
+    margin-top:30px;
+}
+
+#all-card  .main-card{
+    border:none;
+    border-top-left-radius:15px;
+    border-bottom-right-radius:15px;
+    max-width:100%;
+    text-align:center;
+    padding-right:8px;
+    padding-left:8px;
+    padding-top: 10px;
+    padding-bottom:10px;
+    margin-left:40px;
+    margin-right:40px;
+    margin-bottom:10px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+#all-card  .main-card:hover{
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.main-card a{
+    text-decoration:none;
+    font-size:20px;
+    color:black;
+    font-family: Arial, Helvetica, sans-serif;	
+    font-weight:300;
+    line-height:1.3em;
+}

@@ -1,0 +1,43 @@
+
+footer {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    background-color: transparent;
+  }
+  
+  footer .blue {
+    background-color: #176bef;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  footer .red {
+    background-color: #ff3e30;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  footer .yellow {
+    background-color: #f7b529;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  footer .green {
+    background-color: #179c52;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  

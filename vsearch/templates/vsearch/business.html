@@ -1,0 +1,26 @@
+{% extends 'vsearch/base.html' %}
+{% block title %}Business{% endblock %}
+{% load static %}
+{% block business_style %}<link rel="stylesheet" href="{% static 'vsearch/css/business.css' %}">{% endblock %}
+{% block business %}
+
+{% if num_of_stories %}
+ <p id="business-count">Your Cool <b id="dark">{{num_of_stories}}</b> latest business stories</p>
+{% else %}
+<p id="business-count">Your Cool <b>0</b> latest business stories</p>
+{% endif %}
+<div id="all-card">
+
+    {% if business_stories %}
+    {% for each_stories in business_stories %}
+    <div class="main-card">
+        <p><a href="{{each_stories.0}}">{{each_stories.1}}</a></p>
+    </div>
+    {% endfor %}
+    {% else %}
+    <center><img src="{% static 'vsearch/image/greennodata.png' %}"></center>
+    {% endif %}
+    
+</div>
+
+{% endblock %}

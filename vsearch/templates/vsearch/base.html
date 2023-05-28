@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>{% block title %}Search{% endblock %}</title>
+	<link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+	
+	<link rel="stylesheet" href="{% static 'vsearch/css/base.css' %}">
+	{% block web_data_style %} {% endblock %}
+	{% block footer_style %} {% endblock %}
+	{% block business_style %} {% endblock %}
+	{% block sport_style %} {% endblock %}
+	{% block education_style %} {% endblock %}
+	{% block agriculture_style %} {% endblock %}
+</head>
+<body>
+
+
+	<nav class="nav-container">
+		<ul>
+			<div style="position: fixed"><a href="{% url 'home-search-btn' %}"><img class="company-logo" src="{% static 'vsearch/image/v-logo.png' %}" alt="logo"></a></div>
+			<li class="center"><a href="{% url 'business-btn'   %}">Business</a></li>
+			<li class="center"><a href="{% url 'sports-btn'  %}">Sports</a></li>
+			<li class="center"><a href="{% url 'education-btn'  %}">Education</a></li>
+			<li class="center"><a href="{% url 'agriculture-btn' %}">Agriculture</a></li>
+			<div style="float:right"><a href="https://www.trcac.org.in/"><img class="college-logo" src="{% static 'vsearch/image/trcac-logo.jpg' %}" alt="logo"><a></div>
+		</ul>
+		<hr>
+		<form method="POST" class="search-bar" align="center" action="">
+			{% csrf_token %}
+			<input type="text" class="search-input" name="user-input" placeholder="Vsearch...">
+			<i  style="position:relative; right:50px; color: #000000;"class="fa fa-search" aria-hidden="true"></i>
+		</form>
+		
+	</nav>
+	{% comment %} style="position:relative; right:50px; color: #000000; "  {% endcomment %}
+	{% block search_result %} {% endblock %}
+	{% block business %} {% endblock %}
+	{% block sports %} {% endblock %}
+	{% block education %} {% endblock %}
+	{% block agriculture %} {% endblock %}
+	{% block footer %} {% endblock %}
+ 
+</body>
+</html>

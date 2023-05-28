@@ -1,0 +1,37 @@
+{% extends 'vsearch/base.html' %} 
+{% load static %}
+ {% block title %}Sports{%endblock %} 
+ {% block sport_style %}<link rel="stylesheet" href="{% static 'vsearch/css/sports.css' %}">{% endblock %}
+
+ <center>
+ {% block education %}
+{% if sport_count %}
+<center><p id="sp-c">Your Cool <b>{{sport_count}}</b> latest sports news</p></center>
+{% else %}
+<center><img src="{% static 'vsearch/image/greennodata.png' %}"></center>
+{% endif %}
+
+
+
+{% if sports_data %}
+{% for each_sport in sports_data %}
+<div id="all-sports">
+  <div id="card">
+    <article>
+      <a href="{{each_sport.2}}"><img id="sport-image" src="{{each_sport.0}}" /></a>
+      <div class="card-content">
+        <h2>{{each_sport.1}}
+        </h2><br>
+        <p>{{each_sport.4}}
+        </p><br>
+        <small>{{each_sport.3}}</small>
+      </div>
+    </article>
+
+  </div>
+</div>
+  {% endfor %}
+  {% endif %}
+
+  {% endblock %}
+</center>

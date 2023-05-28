@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VSearch</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'vsearch/css/search_home.css' %}">
+</head>
+<body>
+    <center>
+    <div id="container" align="center">
+
+        <div class="items">
+        <img class ="logo" src="{% static 'vsearch/image/v-logo.png' %}" alt="V logo"></div>
+        <br> 
+        <form method="POST" action="">
+        {% csrf_token %}
+        
+        <input type="text" name="user-input" placeholder="Vsearch..." class="input_one">
+        <i style="position:relative; right:50px; color: #000000; " class="fa fa-search" aria-hidden="true"></i>
+        <br><br>
+        <button class="search_btn" type="submit" ><i style="color:#176bef" class="fa fa-search fa-2x" aria-hidden="true" id="search-icon"></i></button>
+        </form>
+        </div>
+</body>
+</html>

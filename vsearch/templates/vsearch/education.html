@@ -1,0 +1,100 @@
+{% extends 'vsearch/base.html' %}
+{% load static %}
+{% block title %}Education
+{% endblock %}
+
+{% block education_style %}
+<link rel="stylesheet" href="{% static 'vsearch/css/education.css' %}">
+{% endblock %}
+
+{% block education %}
+<style>
+    #all_edu{
+        margin-top:30px;
+    }
+    
+    #grid{
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap:30px;
+        align-items:center;
+        margin-left:17%;
+    
+    }
+    
+    #grid > article{
+        border: none;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+        max-width: 80%;
+        {% comment %} min-height: 200px;  {% endcomment %}
+        margin-top:20px;
+        margin-left:16px;
+        margin-right:16px;
+        margin-bottom:5px;
+    }
+    
+    #grid > article img{
+        boredr:1px solid black;
+        max-width:95%;
+        border-radius:10px;
+        box-shadow:none;
+        margin-left:20px;
+    }
+    
+    .card-data{
+        padding:0 20px 20px;
+    }
+
+    
+#grid article .card-data h2{
+    font-family: Bahnschrift Light;
+    font-size: 21px;
+    color: #282b33;
+}
+
+#grid article .card-data p{
+    word-spacing:8px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #555963;
+}
+
+#grid article .card-data small{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+    color: #555963;
+}
+</style>   
+
+{% if education_len %}
+<center><p style="margin-top:23px; font-family: Arial, Helvetica, sans-serif; color: #5d5d5d;">Your Cool <b>{{education_len}}</b> latest education post</p></center>
+{% else %}
+<center><img src="{% static 'vsearch/image/greennodata.png' %}"></center>
+{% endif %}
+<div id="all_edu">
+
+{% if education_container %}
+
+<div id="grid">
+
+
+    {% for each_edu in education_container %}
+    <article>
+        <a href="{{each_edu.3}}"><img style="" class="edu-img" src="{{each_edu.0}}"></a>
+        <div class="card-data">
+            <h2>{{each_edu.1}}</h2>
+            <br>
+            <p>{{each_edu.2}}</p>
+            <br>
+            <small>{{each_edu.4}}</small>
+            <br>
+        </div>
+    </article>
+
+    {% endfor %}
+</div>
+
+{% endif %}
+
+</div>
+
+{% endblock %}

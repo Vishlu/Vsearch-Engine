@@ -1,0 +1,36 @@
+{% extends "vsearch/base.html" %}
+{% block title %} User query{% endblock %}
+{% load static %} 
+{% block web_data_style %}<link rel="stylesheet" href="{% static 'vsearch/css/web_data.css' %}">{% endblock %}
+{% block search_result %}
+
+   <div class="main">
+      <center>
+      {% if num %}
+      <p class="length">Your Cool <b>{{num}}</b> results</p><br>
+      {% else %}
+      <p class="length">Your Cool <b>0</b> results</p><br>
+      {% endif %} 
+      </center>
+
+      <center>
+      {% if data_container %}
+        {% for each in data_container %}
+      <div class="container" >
+          <h3>{{each.1}}</h3><br>
+          <a href="{{each.0}}">{{each.0}}</a>
+          <br><br>
+          <p>{{each.2}}</p><br>
+      </div>
+      <br><br>
+      {% endfor %}
+      {% else %}
+      <center><img class="nodata" src="{% static 'vsearch/image/catnodata.png' %}"></center> 
+      </div>
+      {% endif %}
+    
+
+    {% include "vsearch/footer.html" %}
+
+{% endblock %}
+
